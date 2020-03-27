@@ -1,0 +1,26 @@
+{
+    "name": "nstech/module-platformcode",
+    "description": "",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Mage2Gen",
+            "email": "info@mage2gen.com"
+        },
+        {
+            "name": "Tommy Wu",
+            "email": "tommwu@nstech.com.hk"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "NSTech\\PlatformCode\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}

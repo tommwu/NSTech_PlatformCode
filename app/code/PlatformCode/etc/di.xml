@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="NSTech\PlatformCode\Api\PlatformCodeRepositoryInterface" type="NSTech\PlatformCode\Model\PlatformCodeRepository"/>
+	<preference for="NSTech\PlatformCode\Api\Data\PlatformCodeInterface" type="NSTech\PlatformCode\Model\Data\PlatformCode"/>
+	<preference for="NSTech\PlatformCode\Api\Data\PlatformCodeSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="NSTech\PlatformCode\Model\ResourceModel\PlatformCode\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">nstech_platformcode_platformcode</argument>
+			<argument name="resourceModel" xsi:type="string">NSTech\PlatformCode\Model\ResourceModel\PlatformCode\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="nstech_platformcode_platformcode_listing_data_source" xsi:type="string">NSTech\PlatformCode\Model\ResourceModel\PlatformCode\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+
+</config>

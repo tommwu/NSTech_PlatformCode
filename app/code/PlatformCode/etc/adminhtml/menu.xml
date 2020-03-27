@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="NSTech::top_level" module="NSTech_PlatformCode" resource="Magento_Backend::content" sortOrder="9999" title="NSTech"/>
+		<add action="nstech_platformcode/platformcode/index" id="NSTech_PlatformCode::nstech_platformcode_platformcode" module="NSTech_PlatformCode" parent="NSTech::top_level" resource="Magento_Backend::content" sortOrder="9999" title="PlatformCode"/>
+	</menu>
+</config>

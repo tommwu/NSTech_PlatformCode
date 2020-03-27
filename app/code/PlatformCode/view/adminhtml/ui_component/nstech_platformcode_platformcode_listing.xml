@@ -1,0 +1,133 @@
+<?xml version="1.0" ?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+	<argument name="data" xsi:type="array">
+		<item name="js_config" xsi:type="array">
+			<item name="provider" xsi:type="string">nstech_platformcode_platformcode_listing.nstech_platformcode_platformcode_listing_data_source</item>
+		</item>
+	</argument>
+	<settings>
+		<spinner>nstech_platformcode_platformcode_columns</spinner>
+		<deps>
+			<dep>nstech_platformcode_platformcode_listing.nstech_platformcode_platformcode_listing_data_source</dep>
+		</deps>
+		<buttons>
+			<button name="add">
+				<url path="*/*/new"/>
+				<class>primary</class>
+				<label translate="true">Add new Platform Code</label>
+			</button>
+		</buttons>
+	</settings>
+	<dataSource component="Magento_Ui/js/grid/provider" name="nstech_platformcode_platformcode_listing_data_source">
+		<settings>
+			<updateUrl path="mui/index/render"/>
+		</settings>
+		<aclResource>NSTech_PlatformCode::PlatformCode</aclResource>
+		<dataProvider class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider" name="nstech_platformcode_platformcode_listing_data_source">
+			<settings>
+				<requestFieldName>id</requestFieldName>
+				<primaryFieldName>platformcode_id</primaryFieldName>
+			</settings>
+		</dataProvider>
+	</dataSource>
+	<listingToolbar name="listing_top">
+		<settings>
+			<sticky>true</sticky>
+		</settings>
+		<bookmark name="bookmarks"/>
+		<columnsControls name="columns_controls"/>
+		<filters name="listing_filters"/>
+		<paging name="listing_paging"/>
+	</listingToolbar>
+	<columns name="nstech_platformcode_platformcode_columns">
+		<settings>
+			<editorConfig>
+				<param name="selectProvider" xsi:type="string">nstech_platformcode_platformcode_listing.nstech_platformcode_platformcode_listing.nstech_platformcode_platformcode_columns.ids</param>
+				<param name="enabled" xsi:type="boolean">true</param>
+				<param name="indexField" xsi:type="string">platformcode_id</param>
+				<param name="clientConfig" xsi:type="array">
+					<item name="saveUrl" path="nstech_platformcode/PlatformCode/inlineEdit" xsi:type="url"/>
+					<item name="validateBeforeSave" xsi:type="boolean">false</item>
+				</param>
+			</editorConfig>
+			<childDefaults>
+				<param name="fieldAction" xsi:type="array">
+					<item name="provider" xsi:type="string">nstech_platformcode_platformcode_listing.nstech_platformcode_platformcode_listing.nstech_platformcode_platformcode_columns_editor</item>
+					<item name="target" xsi:type="string">startEdit</item>
+					<item name="params" xsi:type="array">
+						<item name="0" xsi:type="string">${ $.$data.rowIndex }</item>
+						<item name="1" xsi:type="boolean">true</item>
+					</item>
+				</param>
+			</childDefaults>
+		</settings>
+		<selectionsColumn name="ids">
+			<settings>
+				<indexField>platformcode_id</indexField>
+			</settings>
+		</selectionsColumn>
+		<column name="platformcode_id">
+			<settings>
+				<filter>text</filter>
+				<sorting>asc</sorting>
+				<label translate="true">ID</label>
+			</settings>
+		</column>
+		<column name="code">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">Code</label>
+				<editor>
+					<editorType>text</editorType>
+					<validation>
+						<rule name="required-entry" xsi:type="boolean">false</rule>
+					</validation>
+				</editor>
+			</settings>
+		</column>
+	
+		<column name="valid_from">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">Valid From</label>
+				<editor>
+					<editorType>text</editorType>
+					<validation>
+						<rule name="required-entry" xsi:type="boolean">false</rule>
+					</validation>
+				</editor>
+			</settings>
+		</column>
+		<column name="valid_to">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">Valid To</label>
+				<editor>
+					<editorType>text</editorType>
+					<validation>
+						<rule name="required-entry" xsi:type="boolean">false</rule>
+					</validation>
+				</editor>
+			</settings>
+		</column>
+		<column name="commission_rate">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">Commission Rate</label>
+				<editor>
+					<editorType>text</editorType>
+					<validation>
+						<rule name="required-entry" xsi:type="boolean">false</rule>
+					</validation>
+				</editor>
+			</settings>
+		</column>
+	</columns>	
+	<actionsColumn class="NSTech\PlatformCode\Ui\Component\Listing\Column\PlatformCodeActions" name="actions">
+			<settings>
+				<indexField>platformcode_id</indexField>
+				<resizeEnabled>false</resizeEnabled>
+				<resizeDefaultWidth>107</resizeDefaultWidth>
+			</settings>
+		</actionsColumn>
+</listing>

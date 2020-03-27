@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+	<route method="POST" url="/V1/nstech-platformcode/platformcode">
+		<service class="NSTech\PlatformCode\Api\PlatformCodeRepositoryInterface" method="save"/>
+		<resources>
+			<resource ref="NSTech_PlatformCode::PlatformCode_save"/>
+		</resources>
+	</route>
+	<route method="GET" url="/V1/nstech-platformcode/platformcode/search">
+		<service class="NSTech\PlatformCode\Api\PlatformCodeRepositoryInterface" method="getList"/>
+		<resources>
+			<resource ref="NSTech_PlatformCode::PlatformCode_view"/>
+		</resources>
+	</route>
+	<route method="GET" url="/V1/nstech-platformcode/platformcode/:platformcodeId">
+		<service class="NSTech\PlatformCode\Api\PlatformCodeRepositoryInterface" method="get"/>
+		<resources>
+			<resource ref="NSTech_PlatformCode::PlatformCode_view"/>
+		</resources>
+	</route>
+	<route method="PUT" url="/V1/nstech-platformcode/platformcode/:platformcodeId">
+		<service class="NSTech\PlatformCode\Api\PlatformCodeRepositoryInterface" method="save"/>
+		<resources>
+			<resource ref="NSTech_PlatformCode::PlatformCode_update"/>
+		</resources>
+	</route>
+	<route method="DELETE" url="/V1/nstech-platformcode/platformcode/:platformcodeId">
+		<service class="NSTech\PlatformCode\Api\PlatformCodeRepositoryInterface" method="deleteById"/>
+		<resources>
+			<resource ref="NSTech_PlatformCode::PlatformCode_delete"/>
+		</resources>
+	</route>
+</routes>
